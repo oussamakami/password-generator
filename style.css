@@ -17,19 +17,23 @@ body {
   width: 100vw;
   max-height: 812px;
   max-width: 414px;
+  min-height: 645px;
+  min-width: 350px;
   background-color: #3f2a59;
   padding: 25px;
   border-radius: 10px;
+  overflow: auto;
 }
 #container-title {
   font-size: 2rem;
   text-align: center;
+  margin-top: 15px;
 }
 #pass-output {
   background-color: #977fb5;
   border-radius: 3px;
   padding: 25px 0;
-  margin: 50px 0;
+  margin: 75px 0;
   font-size: 17px;
   text-align: center;
   position: relative;
@@ -43,9 +47,82 @@ body {
   bottom: 4px;
   right: 4px;
 }
-
+fieldset {
+  border: none;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+legend {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+fieldset > span {
+  font-weight: 900;
+}
+#lengthRange {
+  display: inline-block;
+  height: 2px;
+  width: 80%;
+  background-color: #977fb5;
+  outline: none;
+  margin: 5px 15px;
+}
+#lengthRange::-moz-range-thumb {
+  cursor: pointer;
+  background-color: #977fb5;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: none;
+}
+label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  display: inline-block;
+}
+input, label{
+  cursor: pointer;
+}
+input[type="checkbox"] {
+  float: right;
+}
+input[type="button"] {
+  width: 100%;
+  padding: 25px;
+  text-align: center;
+  background-color: #977fb5;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  outline: none;
+}
+input[type="button"]:hover {
+  background-color: #9f6fdb;
+}
+input[type="button"]:active {
+  background-color: #6d5788;
+}
 @media all and (max-width: 414px), (max-height: 812px) {
   #main-container {
     border-radius: 0;
+  }
+  #container-title{
+    margin: 0;
+    font-size: 1.6rem;
+  }
+  #pass-output {
+    margin: 50px 0;
+  }
+}
+@media all and (max-height: 700px){
+  #pass-output {
+    margin: 30px 0;
+  }
+  input[type="button"] {
+    margin-top: -25px;
   }
 }

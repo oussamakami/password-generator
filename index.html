@@ -8,14 +8,32 @@
     <meta name="description" content="Generate Strong, Reliable Password According to the Specific Settings" />
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <section id="main-container">
       <h1 id="container-title">Password Generator</h1>
-      <h2 id="pass-output">
-        00000000000000000000000000000000
+      <h2 id="pass-output">ERROR
         <span>click to copy</span>
       </h2>
+      <fieldset>
+        <legend>Length : <span id="lengthPreview"></span></legend>
+        <span>6</span>
+        <input type="range" min="6" max="32" value="19" id="lengthRange">
+        <span>32</span>
+      </fieldset>
+      <fieldset>
+        <legend>settings :</legend>
+        <label for="doUpper">include uppercase letters</label>
+        <input type="checkbox" id="doUpper">
+        <label for="dolower">include lowercase letters</label>
+        <input type="checkbox" id="doLower">
+        <label for="donum">include numbers</label>
+        <input type="checkbox" id="doNum">
+        <label for="dosym">include symbols</label>
+        <input type="checkbox" id="doSym">
+      </fieldset>
+      <input type="button" value="generate password">
     </section>
   </body>
 </html>
