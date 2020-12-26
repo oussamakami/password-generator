@@ -1,7 +1,7 @@
 const length = selectItem("lengthRange"),
   lengthPrev = selectItem("lengthPreview"),
   generateBtn = selectItem("generateBtn"),
-  passwdOutput = selectItem("pass-output"),
+  passwdOutput = selectItem("passwdOutput"),
   settingSelectors = document.querySelectorAll("[type='checkbox']");
 
 window.addEventListener("load", () => {

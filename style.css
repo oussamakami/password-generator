@@ -29,7 +29,7 @@ body {
   text-align: center;
   margin-top: 15px;
 }
-#pass-output {
+#outputDisplay {
   background-color: #977fb5;
   border-radius: 3px;
   padding: 25px 0;
@@ -39,7 +39,7 @@ body {
   position: relative;
   cursor: pointer;
 }
-#pass-output > span {
+#outputDisplay > span {
   white-space: nowrap;
   font-weight: 100;
   font-size: 14px;
@@ -94,7 +94,7 @@ label {
   margin-right: 25px;
   display: inline-block;
 }
-input, label{
+input, label {
   cursor: pointer;
 }
 input[type="checkbox"] {
@@ -115,23 +115,23 @@ input[type="button"] {
 input[type="button"]:hover {
   background-color: #9f6fdb;
 }
-input[type="button"]:active {
+input[type="button"]:active, #outputDisplay:active {
   background-color: #6d5788;
 }
 @media all and (max-width: 414px), (max-height: 812px) {
   #main-container {
     border-radius: 0;
   }
-  #container-title{
+  #container-title {
     margin: 0;
     font-size: 1.6rem;
   }
-  #pass-output {
+  #outputDisplay {
     margin: 50px 0;
   }
 }
 @media all and (max-height: 700px){
-  #pass-output {
+  #outputDisplay {
     margin: 30px 0;
   }
   input[type="button"] {
