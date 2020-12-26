@@ -49,8 +49,11 @@ body {
 }
 fieldset {
   border: none;
-  padding: 20px;
+  padding: 15px;
   margin-bottom: 25px;
+}
+fieldset:first-of-type {
+  display: flex;
 }
 legend {
   font-size: 12px;
@@ -60,14 +63,23 @@ fieldset > span {
   font-weight: 900;
 }
 #lengthRange {
-  display: inline-block;
+  -webkit-appearance: none;
   height: 2px;
-  width: 80%;
+  flex-grow: 1;
   background-color: #977fb5;
   outline: none;
-  margin: 5px 15px;
+  margin: 10px;
 }
 #lengthRange::-moz-range-thumb {
+  cursor: pointer;
+  background-color: #977fb5;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: none;
+}
+#lengthRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
   cursor: pointer;
   background-color: #977fb5;
   height: 20px;
@@ -90,7 +102,7 @@ input[type="checkbox"] {
 }
 input[type="button"] {
   width: 100%;
-  padding: 25px;
+  padding: 25px 0;
   text-align: center;
   background-color: #977fb5;
   font-size: 1.6rem;
