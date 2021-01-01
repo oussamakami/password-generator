@@ -58,3 +58,33 @@ function allowedSettings() {
   };
   return response;
 }
+
+function generateCharArray(type) {
+  let start,
+    end,
+    responseArray = [];
+
+  switch (type) {
+    default:
+
+    case "0-9":
+      start = 48;
+      end = 57;
+      break;
+
+    case "A-Z":
+      start = 65;
+      end = 90;
+      break;
+
+    case "a-z":
+      start = 97;
+      end = 122;
+  }
+
+  for (; start <= end; start++) {
+    responseArray.push(String.fromCharCode(start));
+  }
+
+  return responseArray;
+}
