@@ -36,13 +36,25 @@ function copyToClipboard() {
 
 function keepOneSettingChecked() {
   let checkedSettings = document.querySelectorAll(
-      "input[type=checkbox]:checked"),
+      "input[type=checkbox]:checked"
+    ),
     disabledSettings = document.querySelectorAll(
-      "input[type=checkbox]:disabled");
+      "input[type=checkbox]:disabled"
+    );
 
   if (checkedSettings.length < 2) {
     checkedSettings[0].disabled = 1;
   } else if (checkedSettings.length > 1 && disabledSettings.length > 0) {
     disabledSettings[0].disabled = 0;
   }
+}
+
+function allowedSettings() {
+  let response = {
+    hasUpper: selectItem("doUpper").checked,
+    hasLower: selectItem("doLower").checked,
+    hasNum: selectItem("doNum").checked,
+    hasSymbls: selectItem("doSym").checked,
+  };
+  return response;
 }
