@@ -6,15 +6,19 @@ const length = selectItem("lengthRange"),
   settingSelectors = document.querySelectorAll("[type='checkbox']");
 
 window.addEventListener("load", () => {
-  length.addEventListener("input", updateLengthPrev);
   updateLengthPrev();
+  generate(allowedSettings(), length.value);
+
+  length.addEventListener("input", updateLengthPrev);
   outputDisplay.addEventListener("click", copyToClipboard);
-  settingSelectors.forEach((elem) => {
-    elem.addEventListener("input", keepOneSettingChecked);
-  });
+
   generateBtn.addEventListener("click", () =>
     generate(allowedSettings(), length.value)
   );
+
+  settingSelectors.forEach((elem) => {
+    elem.addEventListener("input", keepOneSettingChecked);
+  });
 });
 
 function selectItem(id) {
