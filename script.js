@@ -12,6 +12,9 @@ window.addEventListener("load", () => {
   settingSelectors.forEach((elem) => {
     elem.addEventListener("input", keepOneSettingChecked);
   });
+  generateBtn.addEventListener("click", () =>
+    generate(allowedSettings(), length.value)
+  );
 });
 
 function selectItem(id) {
@@ -87,4 +90,46 @@ function generateCharArray(type) {
   }
 
   return responseArray;
+}
+
+function allowedCharPool(instructions) {
+  let pool = [];
+
+  if (instructions.hasUpper) {
+    pool = pool.concat(generateCharArray("A-Z"));
+  }
+  if (instructions.hasLower) {
+    pool = pool.concat(generateCharArray("a-z"));
+  }
+  if (instructions.hasNum) {
+    pool = pool.concat(generateCharArray("0-9"));
+  }
+  if (instructions.hasSymbls) {
+    pool = pool.concat("<>{}[]:;+-*/|.?!@#$%&()_~'".split(""));
+  }
+
+  return pool;
+}
+
+function pickRandomCharFromPool(charPool, length) {
+  let random,
+    result = "";
+
+  for (i = 0; i < length; i++) {
+    random = Math.floor(Math.random() * charPool.length);
+    result += charPool[random];
+  }
+
+  return result;
+}
+
+function updateDisplay(result) {
+  passwdOutput.innerText = result;
+}
+
+function generate(instructions, length) {
+  const charPool = allowedCharPool(instructions),
+    result = pickRandomCharFromPool(charPool, length);
+
+  updateDisplay(result);
 }
