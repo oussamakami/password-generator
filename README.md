@@ -2,7 +2,7 @@
 this generator is built using vanilla (HTML, CSS, and JS) and he can produce Reliable Passwords with the provided settings.
 
 preview: 
-[https://oussamakami.github.io/javascript-calculator/](https://oussamakami.github.io/javascript-calculator/)
+[https://oussamakami.github.io/password-generator/](https://oussamakami.github.io/password-generator/)
 # Screenshots
 ![mobiles screenshot](./imgs/screenshot.png)
 # Features
